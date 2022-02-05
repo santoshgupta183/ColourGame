@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Colour Memory</string>
+    <string name="current_score_text">%d\nScore</string>
+    <string name="current_score_dialog_text">Current score : %d</string>
+</resources>
