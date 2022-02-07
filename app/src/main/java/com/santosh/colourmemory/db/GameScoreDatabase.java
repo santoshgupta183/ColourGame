@@ -1,5 +1,7 @@
 package com.santosh.colourmemory.db;
 
+import static com.santosh.colourmemory.utils.Constants.DATABASE_NAME;
+
 import android.content.Context;
 
 import androidx.room.Database;
@@ -10,7 +12,7 @@ import com.santosh.colourmemory.model.GameScore;
 
 @Database(
         entities = {GameScore.class},
-        version = 2
+        version = 1
 )
 public abstract class GameScoreDatabase extends RoomDatabase {
     public abstract GameScoreDao getGameScoreDao();
@@ -20,7 +22,7 @@ public abstract class GameScoreDatabase extends RoomDatabase {
     public static GameScoreDatabase getInstance(Context context){
         if (instance == null){
             instance = Room.databaseBuilder(context,
-                    GameScoreDatabase.class, "gameScoreDb2.db")
+                    GameScoreDatabase.class, DATABASE_NAME)
                     .build();
         }
         return instance;
