@@ -122,9 +122,9 @@ public class ColourMemoryViewModel extends AndroidViewModel {
             GAME_MATRIX[cardData.getIndex()/MATRIX_SIZE][cardData.getIndex()%MATRIX_SIZE] = Constants.CARD_REMOVE;
         }
         if (removedCardsCount>=(MATRIX_SIZE*MATRIX_SIZE)){
+            currentGameState.setGameOver(true);
+            updateCurrentGameStateLiveData();
         }
-        currentGameState.setGameOver(true);
-        updateCurrentGameStateLiveData();
     }
 
     private int getCardValue(int id){
